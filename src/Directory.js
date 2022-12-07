@@ -1,19 +1,21 @@
 
+import { Link } from 'react-router-dom'
 
 function Directory() {
+
     return(
        <div className="Directory">
             <div>
                 <h2>Artist</h2>
-                <button>Explore</button>
+                <Link to="/artists"><button>Explore</button></Link>
             </div>
             <div>
                 <h2>Venues</h2>
-                <button>Explore</button>
+                <Link to="/venues"><button>Explore</button></Link>
             </div>
             <div>
                 <h2>Promoters</h2>
-                <button>Explore</button>
+                <Link to="/promoters"><button>Explore</button></Link>
             </div>
        </div>
     )
