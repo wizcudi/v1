@@ -1,5 +1,4 @@
 
-
 import ARTIST_DB from "./ARTIST_DB"
 import { useState, useEffect } from 'react';
 
@@ -48,68 +47,24 @@ function Artists() {
         <h2>{selectedArtist.name}</h2>
         <p>{selectedArtist.city}</p>
         <p>{selectedArtist.genre}</p>
-        <p>{selectedArtist.bio}</p>
+        <p>{selectedArtist.longBio}</p>
       </div>
     );
   }
 
 
-
   return(
     <div className="Artists">
-      {ArtistMap}
-      {artistDetails}
+        {selectedArtist ? artistDetails : ArtistMap}
+
+      {/* {ArtistMap}
+      {artistDetails} */}
     </div>
   )
+
+
 }
 
 
 
 export default Artists;
-
-
-
-
-
-
-
-
-// function Artists() {
-//   // Initialize the state with an empty array
-//   const [artistDetails, setArtistDetails] = useState([]);
-
-//   // When the component is mounted, populate the state with the artist details
-//   useEffect(() => {
-//     setArtistDetails(ARTIST_DB);
-//   }, []);
-
-//   // Map through the artist details and return a component for each one
-//   const ArtistMap = artistDetails.map(artist => {
-//     return(
-//       <div className="Artists__Card" key={artist.id}>
-//         <ArtistDetails
-//           name={artist.name}
-//           city={artist.city}
-//           genre={artist.genre}
-//           bio={artist.bio}
-//         />
-//         <Link to={`/artist/${artist.name}`}>
-//             <button>More Details</button>
-//         </Link>
-//       </div>
-//     )
-//   });
-
-//   return(
-//     <div className="Artists">
-//       {ArtistMap}
-//     </div>
-//   )
-// }
-
-
-
-// export default Artists;
-
-
-
