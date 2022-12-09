@@ -49,6 +49,22 @@ const ARTIST_DB = [
         bio: 'This is a SHORT bio',
         longBio: 'This is a LONGER bio for the artist'
     },
+    {
+        id: 7,
+        name: 'Caleborate',
+        city: 'Oakland',
+        genre: 'Rap',
+        bio: 'This is a SHORT bio',
+        longBio: 'This is a LONGER bio for the artist'
+    },
+    {
+        id: 8,
+        name: 'Q',
+        city: 'Mia',
+        genre: 'R&B/Soul',
+        bio: 'This is a SHORT bio',
+        longBio: 'This is a LONGER bio for the artist'
+    },
 ]
 
 export default ARTIST_DB;

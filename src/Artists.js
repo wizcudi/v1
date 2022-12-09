@@ -1,4 +1,6 @@
 
+
+
 import ARTIST_DB from "./ARTIST_DB"
 import { useState, useEffect } from 'react';
 
@@ -12,6 +14,13 @@ function Artists() {
   // Will be used to render each artist page
   const [selectedArtist, setSelectedArtist] = useState(null);
 
+  // Initialize the state for the filter value with 2
+  // Will be used to filter the list of artists to display
+  const [filterArtist, setFilterArtist] = useState(2);
+
+
+
+
 
 
   // When the component is mounted, populate the state with the artist details
@@ -20,10 +29,11 @@ function Artists() {
     setArtistsState(ARTIST_DB);
   }, []);
 
-
+  // Filter the list of artists to only display 2
+  const ArtistMap = artistsState.filter(artist => artist.id <= filterArtist);
 
   // Map through the ARTIST_DB Array and return a component for each item
-  const ArtistMap = artistsState.map(artist => {
+  const ArtistList = ArtistMap.map(artist => {
     return(
       <div className="Artists__Card" key={artist.id}>
         <h2>{artist.name}</h2>
@@ -36,6 +46,7 @@ function Artists() {
       </div>
     )
   });
+
 
 
 
@@ -57,13 +68,24 @@ function Artists() {
 
 
   return(
-    <div className="Artists">
-
-        {selectedArtist ? artistDetails : ArtistMap}
-
-    </div>
-  )
-
+        // <div>
+        //     <div className="Artists">
+        //         {selectedArtist ? artistDetails : ArtistList}
+                
+        //     </div>
+        //     <button onClick={() => setFilterArtist(filterArtist + 2)}>Show More</button>
+        // </div>
+        <div>
+            <div className="Artists">
+                {selectedArtist ? artistDetails : ArtistList}
+            </div>
+            {!selectedArtist && (
+                <button onClick={() => setFilterArtist(filterArtist + 2)}>
+                Show More
+                </button>
+            )}
+        </div>
+    )
 
 }
 
