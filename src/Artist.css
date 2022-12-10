@@ -1,0 +1,76 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Bungee&family=Carter+One&family=Fugaz+One&family=Hanalei+Fill&family=Lilita+One&family=Luckiest+Guy&family=Roboto&family=Roboto+Condensed&family=Rubik+Spray+Paint&family=Rubik+Vinyl&family=Sriracha&display=swap');
+
+
+.ArtistList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightblue;
+    /* padding: 50px; */
+    min-height: 100vh;
+    row-gap: 15px;
+}
+.ArtistList__Button{
+    display: flex;
+    justify-content: center;
+}
+.Artists{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: violet;
+    row-gap: 30px;
+    column-gap: 30px;
+    min-height: 70%;
+    /* padding: 60px; */
+}
+.ArtistList h2 {
+    font-size: 35px;
+    font-family: 'Lilita One', 'sans-serif';
+    /* font-family: 'Rubik Vinyl', 'sans-serif'; */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+.ArtistList p {
+    font-size: 25px;
+    font-family: 'Roboto Condensed', 'sans-serif';;
+    /* font-family: 'Rubik Vinyl', 'sans-serif'; */
+    /* letter-spacing: 2px; */
+    margin: 0;
+}
+.ArtistList button {
+    background-color: rgb(21, 21, 21);
+    color: white ;
+    padding: 10px;
+    border-radius: 7.5px;
+    border: solid rgb(0, 0, 0) 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: 'Carter One',  'sans-serif';
+    letter-spacing: 2px;
+}
+.ArtistList img{
+    border-radius: 100px;
+    height: 200px;
+    background-size: contain;
+    /* background-position: center center; */
+}
+
+.Artists__Card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: lightseagreen;
+    row-gap: 20px;
+    width: 300px;
+    height: 600px;
+}
+

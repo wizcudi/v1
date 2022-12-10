@@ -1,4 +1,4 @@
-
+import './Artist.css'
 
 
 import ARTIST_DB from "./ARTIST_DB"
@@ -36,10 +36,11 @@ function Artists() {
   const ArtistList = ArtistMap.map(artist => {
     return(
       <div className="Artists__Card" key={artist.id}>
+        <div>{artist.image}</div>
         <h2>{artist.name}</h2>
-        <p>{artist.city}</p>
-        <p>{artist.genre}</p>
-        <p>{artist.bio}</p>
+        <p>City: {artist.city}</p>
+        <p>Genre: {artist.genre}</p>
+        <p>Bio: {artist.bio}</p>
         <button onClick={() => setSelectedArtist(artist)}>
           More Details
         </button>
@@ -55,6 +56,7 @@ function Artists() {
   if (selectedArtist) {
     artistDetails = (
       <div>
+        <div>{selectedArtist.image}</div>
         <h2>{selectedArtist.name}</h2>
         <p>{selectedArtist.city}</p>
         <p>{selectedArtist.genre}</p>
@@ -68,24 +70,19 @@ function Artists() {
 
 
   return(
-        // <div>
-        //     <div className="Artists">
-        //         {selectedArtist ? artistDetails : ArtistList}
-                
-        //     </div>
-        //     <button onClick={() => setFilterArtist(filterArtist + 2)}>Show More</button>
-        // </div>
-        <div>
-            <div className="Artists">
-                {selectedArtist ? artistDetails : ArtistList}
-            </div>
-            {!selectedArtist && (
-                <button onClick={() => setFilterArtist(filterArtist + 2)}>
-                Show More
-                </button>
-            )}
-        </div>
-    )
+    <div className="ArtistList">
+      <div className="Artists">
+        {selectedArtist ? artistDetails : ArtistList}
+      </div>
+      <div className="ArtistList__Button">
+        {!selectedArtist && (
+          <button onClick={() => setFilterArtist(filterArtist + 2)}>
+            Show More
+          </button>
+        )}
+      </div>
+    </div>
+  )
 
 }
 
